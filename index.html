@@ -19,17 +19,22 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://afedortsovbn-commits.github.io/Diana/prewiev.jpg">
-
-  <!-- ВАЖНО: УБРАТЬ meta refresh -->
 </head>
 
 <body>
   <p>Выполняется переадресация…</p>
   <p><a href="https://brka.by/lawyers/fedortsova-diana-sergeevna/">Если не сработало — нажмите сюда</a></p>
 
+  <!-- ВОТ ЗДЕСЬ — заменяете старый script на этот -->
   <script>
-    // Только JS-редирект — для Telegram-превью это ключевое
-    window.location.replace("https://brka.by/lawyers/fedortsova-diana-sergeevna/");
+    const isBot = /viber|telegram|whatsapp|bot|crawl|spider|facebookexternalhit/i.test(navigator.userAgent);
+
+    if (!isBot) {
+      setTimeout(() => {
+        window.location.replace("https://brka.by/lawyers/fedortsova-diana-sergeevna/");
+      }, 100);
+    }
   </script>
+
 </body>
 </html>
